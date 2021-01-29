@@ -1,7 +1,7 @@
 import uuid
 from django.db import models
 from stdimage.models import StdImageField
-
+from cloudinary.models import CloudinaryField
 
 def get_file_path(_instance, filename):
     ext = filename.split('.')[-1]
