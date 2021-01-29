@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ object.title }}</title>
+     <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/projectstyle.css' %}">
+
+</head>
+<body>
+    {% if object.github %}
+            <div id="content">
+
+            </div>
+            <div class="button">
+                {% if object.deploy %}
+                    <a href="{{ object.deploy }}" style="margin-right: 10px" class="btn btn-common buttonn" target="_blank">WEBSITE</a>
+                {% endif %}
+                {% if object.repository %}
+                    <a href="{{ object.github }}" style="margin-right: 10px" class="btn btn-common buttonn" target="_blank">REPOSITORY</a>
+                {% endif %}
+                <a href="{% url 'index' %}" class="btn btn-common buttonn">VOLTAR</a>
+            </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.4.0/showdown.min.js"></script>
+        <script>
+            var url = '{{ object.github }}'
+            url = url.replaceAll('github.com','raw.githubusercontent.com')
+            let filename = url+'/main/README.md'
+              fetch(filename).then((response)=>{
+                if(!response.ok) throw new Error('');
+                return response.text();
+              }).then((api) =>{
+                let text = api;
+
+                converter = new showdown.Converter({
+                  ghCompatibleHeaderId: true,
+                  simpleLineBreaks: true,
+                  ghMentions: true,
+                  tables: true
+                });
+                html =  converter.makeHtml(text)
+                converter.setFlavor('github');
+                document.getElementById('content').innerHTML = html;
+              }).catch(() => {
+                document.getElementById('content').innerHTML = 'description coming soon';
+                }
+            );
+
+        </script>
+    {% else %}
+        <div id="content">
+            <h1>{{ object.title }}</h1>
+            <pre style="background-color:none">{{ object.description }}</pre>
+        </div>
+        <div class="button">
+            {% if object.deploy %}
+                <a href="{{ object.deploy }}" style="margin-right: 10px" class="btn btn-common buttonn" target="_blank">WEBSITE</a>
+            {% endif %}
+            <a href="{% url 'index' %}" class="btn btn-common buttonn">VOLTAR</a>
+        </div>
+    {% endif %}
+
+</body>
+</html>

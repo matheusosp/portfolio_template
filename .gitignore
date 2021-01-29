@@ -1,0 +1,4 @@
+# created by virtualenv automatically
+venv
+meusite/.env
+__pycache__
