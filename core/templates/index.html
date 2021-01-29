@@ -156,7 +156,7 @@
                 {% for p in projects %}
                     <div class="card">
                         <div class="box">
-                            <img src="{{ p.img.thumb.url }}" alt="{{ p.title }}">
+                            <img src="{{ p.img.url }}" alt="{{ p.title }}">
                             <div class="text">{{ p.title }}</div>
                             <p>{{ p.resume }}</p>
                             <a href="{% url 'project' p.pk %}">Read more</a>
@@ -177,7 +177,7 @@
             <div class="workBx">
                 {% for p in projects %}
                     <a href="{% url 'project' p.pk %}">
-                        <div class="brand" style="background-image:url({{ p.img.thumb.url }});background-repeat: no-repeat;background-size: cover;background-position: center;">
+                        <div class="brand" style="background-image:url({{ p.img.url }});background-repeat: no-repeat;background-size: cover;background-position: center;">
                             <h2 >{{ p.title }}</h2>
                         </div>
                     </a>
