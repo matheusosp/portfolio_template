@@ -4,10 +4,9 @@
 ## TO RUN LOCALLY
 
 ```
-git clone ggit@github.com:matheusosp/portfolio_template.git
+git clone git@github.com:matheusosp/portfolio_template.git
 python -m venv venv
 venv/Scripts/activate
-git checkout local
 pip install -r requirements.txt 
 python manage.py makemigrations
 python manage.py migrate 
