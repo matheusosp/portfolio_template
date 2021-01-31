@@ -5,6 +5,7 @@
         {% for p in projects %}
             <div class="card">
                 <div class="box">
+                        <p>{{ p.img }}</p>
                         {% if p.img != None %}
                             <img src="{{ p.img.url }}" alt="{{ p.title }}">
                         {% else %}
