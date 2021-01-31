@@ -8,6 +8,7 @@ git clone git@github.com:matheusosp/portfolio_template.git
 python -m venv venv
 venv/Scripts/activate
 pip install -r requirements.txt 
+git checkout local
 UPDATE to DATABASE local in settings.py"
 python manage.py makemigrations
 python manage.py migrate 
