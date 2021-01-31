@@ -5,7 +5,7 @@
         {% for p in projects %}
             <div class="card">
                 <div class="box">
-                        {% if p.img.url %}
+                        {% if p.img != None %}
                             <img src="{{ p.img.url }}" alt="{{ p.title }}">
                         {% else %}
                             <img src='//www.termoparts.com.br/wp-content/uploads/2017/10/no-image.jpg' alt="{{ p.title }}">
