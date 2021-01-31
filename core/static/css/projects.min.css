@@ -65,7 +65,7 @@
     border: 2px solid #000;
 }
 #showProjects{
-    display: inline-block;
+    display: block;
     background: #00BFFF;
     color: #fff;
     font-size: 25px;
@@ -74,7 +74,7 @@
     border: 2px solid #00BFFF;
     transition: all 0.3s ease;
     cursor:pointer;
-    margin: 50px auto auto 42%;
+    margin: 50px auto auto auto;
 }
 #showProjects:hover{
     color: #00BFFF;

@@ -112,7 +112,7 @@ footer span a:hover {
 /* responsive media query start */
 @media (max-width: 1300px) {
     .home .max-width {
-        margin-left: 0px;
+        margin-left: 0px!important;
     }
 }
 
@@ -125,14 +125,14 @@ footer span a:hover {
 
 @media (max-width: 991px) {
     .max-width {
-        padding: 0 50px;
+        padding: 0 50px!important;
     }
 }
 
 @media (max-width: 947px) {
     .menu-btn {
-        display: block;
-        z-index: 999;
+        display: block!important;
+        z-index: 999!important;
     }
 
     .menu-btn i.active:before {
@@ -152,11 +152,11 @@ footer span a:hover {
     }
 
     .navbar .menu.active {
-        left: 0;
+        left: 0 !important;
     }
 
     .navbar .menu li {
-        display: block;
+        display: block !important;
     }
 
     .navbar .menu li a {
@@ -166,87 +166,134 @@ footer span a:hover {
     }
 
     .home .home-content .text-2 {
-        font-size: 70px;
+        font-size: 70px!important;
     }
 
     .home .home-content .text-3 {
-        font-size: 35px;
+        font-size: 35px!important;
     }
 
     .home .home-content a {
-        font-size: 23px;
-        padding: 10px 30px;
+        font-size: 23px!important;
+        padding: 10px 30px!important;
     }
 
     .max-width {
-        max-width: 800px;
+        max-width: 800px!important;
     }
 
     .about .about-content .column {
-        width: 100%;
+        width: 100%!important;
     }
 
     .about .about-content .left {
-        display: flex;
-        justify-content: center;
-        margin: 0 auto 60px;
+        display: flex!important;
+        justify-content: center!important;
+        margin: 0 auto 60px!important;
     }
 
     .about .about-content .right {
-        flex: 100%;
+        flex: 100%!important;
     }
 
     .services .serv-content .card {
-        width: calc(50% - 10px);
-        margin-bottom: 20px;
+        width: calc(50% - 10px)!important;
+        margin-bottom: 20px!important;
     }
 
     .skills .skills-content .column,
     .contact .contact-content .column {
-        width: 100%;
-        margin-bottom: 35px;
+        width: 100%!important;
+        margin-bottom: 35px!important;
     }
     .sci{
-        position: absolute;
-        bottom: 50px;
-        right: initial;
-        flex-direction: row;
+        position: relative!important;
+        display: flex;
+        flex-direction: row!important;
+        margin-top: 0!important;
+        right: 0px!important;
+        top: 20px;
     }
     .sci li a{
         margin: initial;
-        margin-right: 10px;
+        margin-right: 10px!important;
+
     }
 }
 
 @media (max-width: 690px) {
     .max-width {
-        padding: 0 23px;
+        padding: 0 23px!important;
     }
 
     .home .home-content .text-2 {
-        font-size: 60px;
+        font-size: 60px!important;
     }
 
     .home .home-content .text-3 {
-        font-size: 32px;
+        font-size: 32px!important;
     }
 
     .home .home-content a {
-        font-size: 20px;
+        font-size: 20px!important;
     }
 
     .services .serv-content .card,
     .skills .serv-content .column {
-        width: 100%;
+        width: 100% !important;
+    }
+    .sec{
+        padding: 20px!important;
     }
 }
 
 @media (max-width: 500px) {
     .home .home-content .text-2 {
-        font-size: 50px;
+        font-size: 50px!important;
     }
 
     .home .home-content .text-3 {
-        font-size: 27px;
+        font-size: 27px!important;
+    }
+    .info{
+        flex-direction: column!important;
+    }
+    .skills-content{
+        flex-direction: column!important;
+    }
+    .skills.title{
+        width:100%!important;
+    }
+    .skills-content .column{
+        width:100%!important;
+    }
+    .skills-content .info{
+        align-items: normal!important;
+        width: 100%;
+        text-decoration: initial;
+    }
+    .skills-content .info dl{
+        margin-bottom: -80px!important;
+    }
+    section .title::after {
+        padding: 0px !important;
+    }
+
+}
+@media (max-width: 380px) {
+    section .title::before{
+        bottom: -26px!important;
+    }
+    section .title::after {
+        bottom: -35px!important;
+    }
+    .secProjects{
+        padding: 25px!important;
+    }
+    .projectsAll{
+        overflow: auto;
+    }
+    .secProjects .boxProject{
+        width: 100%;
     }
 }
