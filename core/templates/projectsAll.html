@@ -1,5 +1,5 @@
 {% load static %}
-{% load cloudinary %}
+
 <section class="secProjects" id="projects" name="secProjects">
         <div class="content2">
 			<div class="rowProject">
@@ -29,12 +29,8 @@
                     </div>
 
                     <div class="card-body" >
-                        <p>Receba 100 seguidores de ambos os sexos<br>
-                            Seguidores reais e brasileiros<br>
-                            Altere a quantidade ao comprar<br>
-                            Sem unfollow<br>
-                            Não precisamos de senha
-                        </p>
+                        <h5 class="title">{{ p.title }}</h5>
+                        <p>{{ p.resume }}</p>
                         <a href="#" class="btnn"><span>COMPRAR AGORA</span></a>
                     </div>
 
