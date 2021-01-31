@@ -55,3 +55,9 @@
 .navbar.sticky .menu li a:hover {
     color: #fff;
 }
+.menu-btn {
+    color: #fff;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}

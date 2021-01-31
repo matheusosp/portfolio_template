@@ -20,7 +20,6 @@ class IndexView(FormView):
     def form_valid(self, form, *args, **kwargs):
         form.send_mail()
         messages.success(self.request,'Email sent successfully')
-        print(messages)
         return super(IndexView, self).form_valid(form, *args, **kwargs)
 
     def form_invalid(self, form, *args, **kwargs):
@@ -35,6 +34,6 @@ class ListProjectView(DetailView):
     def get_context_data(self, **kwargs):
         context = super(ListProjectView, self).get_context_data(**kwargs)
         context['project'] = Projects.objects.filter(pk=self.kwargs.get('pk'))
-    #    print(context.get('object').description)
+    #    print(context.get('object').)
 
         return context

@@ -1,0 +1,16 @@
+<div class="max-width">
+    <h2 class="title">My Projects</h2>
+    <div class="carousel owl-carousel">
+        {% for p in projects %}
+            <div class="card">
+                <div class="box">
+                    <img src="{{ p.img.url }}" alt="{{ p.title }}">
+                    <div class="text">{{ p.title }}</div>
+                    <p>{{ p.resume }}</p>
+                    <a href="{% url 'project' p.pk %}">Read more</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <button href="" id="showProjects">Show all</button>
+</div>

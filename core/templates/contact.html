@@ -1,0 +1,43 @@
+ {% load static %}
+<section class="sec contact" id="contact">
+        <div class="content2">
+            <div class="mxw800p">
+                <h3> Send a message </h3>
+                <p>Hi, contact me to chat!</p>
+            </div>
+            <div class="contactForm">
+                 <form id="contactForm" method="POST" onsubmit="myFunction()" action="{% url 'index' %}">
+                     {% csrf_token %}
+                    <div class="row100">
+                        <div class="inputBx50">
+                            <input type="text" id="name" name="name" placeholder="Name" required data-error="Please enter your name">
+                        </div>
+                        <div class="inputBx50">
+                            <input type="email" id="email" name="email" placeholder="Email Adress" required data-error="Please enter your email">
+                        </div>
+                    </div>
+                    <div class="row100">
+                        <div class="inputBx100">
+                            <input type="text" placeholder="Subject" id="msg_subject" name="subject" required data-error="Please enter your subject">
+                        </div>
+                    </div>
+                     <div class="row100">
+                        <div class="inputBx100">
+                            <textarea id="message" name="message" placeholder="Your Message" rows="7" data-error="Write your message" required></textarea>
+                        </div>
+                    </div>
+                    <div class="row100">
+                        <div class="inputBx100">
+                            <input type="submit" onclick="myFunction()" id="form-submit" value="send">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="sci2">
+                <ul>
+                <li><a href="https://github.com/matheusosp/" target="_blank"><img src="{% static 'assets/GitHub-Mark-120px-plus.png' %}"></a></li>
+                <li><a href="https://www.linkedin.com/in/matheus-pereira-2419a3140/" target="_blank"><img src="{% static 'assets/linkedin.png' %}"></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>

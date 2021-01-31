@@ -1,0 +1,108 @@
+{% load static %}
+<section class="secProjects" id="projects" name="secProjects">
+        <div class="content2">
+			<div class="rowProject">
+				<div class="col-md-12 text-center">
+					<ul id="filter-list">
+                        <li class="filter active" data-filter="all">All</li>
+						<li class="filter" data-filter="python">Python</li>
+						<li class="filter" data-filter="java">Java</li>
+						<li class="filter" data-filter="ECMAScript">Javascript</li>
+						<li class="filter" data-filter="api's">API'S</li>
+						<li class="filter" data-filter="HTML & CSS">HTML & CSS</li>
+						<li class="filter" data-filter="others">others</li>
+					</ul>
+				</div>
+			</div>
+            <div class="projectsAll">
+            {% for p in projects %}
+
+                <div class="boxProject {{p.categories.all|join:" "|lower }}" data-category="all">
+
+                    <div class="card-header">
+                        <img src="{{ p.img.url }}" alt="{{ p.title }}">
+                    </div>
+
+                    <div class="card-body" >
+                        <p>Receba 100 seguidores de ambos os sexos<br>
+                            Seguidores reais e brasileiros<br>
+                            Altere a quantidade ao comprar<br>
+                            Sem unfollow<br>
+                            Não precisamos de senha
+                        </p>
+                        <a href="#" class="btnn"><span>COMPRAR AGORA</span></a>
+                    </div>
+
+                </div>
+                {% endfor %}
+
+            </div>
+        <button href="" id="back">Back</button>
+        </div>
+    </section>
+
+<script>
+    var items = document.querySelectorAll('.boxProject div');
+    filterSelection("all")
+    animate(items);
+
+    // filter on click
+    each('ul#filter-list li', function(el) {
+      el.addEventListener('click', function(e) {
+        e.preventDefault();
+        console.log(el.getAttribute("data-filter"))
+        if(el) {
+            filterSelection(el.getAttribute("data-filter").toLowerCase());
+        }
+        animate(document.getElementsByClassName('viewProject'));
+      });
+    });
+    function filterSelection(c) {
+      var x, i;
+      x = document.getElementsByClassName("boxProject");
+      if (c == "all") c = "";
+      for (i = 0; i < x.length; i++) {
+        w3RemoveClass(x[i], "viewProject");
+        if (x[i].className.indexOf(c) > -1) {
+            w3AddClass(x[i], "viewProject");
+        }
+      }
+
+    }
+    function w3AddClass(element, name) {
+      var i, arr1, arr2;
+      arr1 = element.className.split(" ");
+      arr2 = name.split(" ");
+      for (i = 0; i < arr2.length; i++) {
+        if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+      }
+    }
+    function w3RemoveClass(element, name) {
+      var i, arr1, arr2;
+      arr1 = element.className.split(" ");
+      arr2 = name.split(" ");
+      for (i = 0; i < arr2.length; i++) {
+        while (arr1.indexOf(arr2[i]) > -1) {
+          arr1.splice(arr1.indexOf(arr2[i]), 1);
+        }
+      }
+      element.className = arr1.join(" ");
+    }
+
+    function each(el, callback) {
+      var allDivs = document.querySelectorAll(el),
+        alltoArr = Array.prototype.slice.call(allDivs);
+      Array.prototype.forEach.call(alltoArr, function(selector, index) {
+        if (callback) return callback(selector);
+      });
+    };
+    function animate(item) {
+      (function show(counter) {
+        setTimeout(function() {
+          if(item.length > 0)item[counter].classList.add('viewProject');
+          counter++;
+
+        },50);
+      })(0);
+    };
+</script>

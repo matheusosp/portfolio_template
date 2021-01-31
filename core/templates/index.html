@@ -1,5 +1,4 @@
 {% load static %}
-{% load cloudinary %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +7,13 @@
     <title>Matheus Oliveira</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+    <link rel="stylesheet" href="{% static 'css/services.css' %}">
+    <link rel="stylesheet" href="{% static 'css/skills.css' %}">
+    <link rel="stylesheet" href="{% static 'css/projects.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/projectsAll.css' %}">
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
     <script src="//kit.fontawesome.com/a076d05399.js"></script>
     <script src="//code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
@@ -25,234 +31,55 @@
     {% include 'nav.html' %}
 
     <!-- home section start -->
-    <section class="home" id="home">
-        <div class="max-width">
-            <div class="home-content">
-                <div class="text-1">Hello! My name is...</div>
-                <div class="text-2">Matheus Oliveira</div>
-                <div class="text-3">and I'm a <span class="typing"></span></div>
-                <a href="https://www.linkedin.com/in/matheus-pereira-2419a3140/" target="_blank">Know More</a>
-            </div>
-            <ul class="sci">
-                <li><a href="https://github.com/matheusosp/" target="_blank"><img src="{% static 'assets/GitHub-Mark-120px-plus.png' %}"></a></li>
-                <li><a href="https://www.linkedin.com/in/matheus-pereira-2419a3140/" target="_blank"><img src="{% static 'assets/linkedin.png' %}"></a></li>
-            </ul>
-        </div>
-    </section>
+        {% include 'home.html' %}
     <!-- home section end -->
 
     <!-- about section start -->
-    <section class="about" id="about">
-        <div class="max-width">
-            <h2 class="title">About me</h2>
-            <div class="about-content">
-                <div class="column right">
-                    <div class="text">
-                        I'm a <span class="typing-2"></span> <br />
-                    </div>
-                    <p>
-                        Knowlodge is power! I'm trying to be above the
-                        average. <br /> <br />
-
-                    </p>
-                    <a target="_blank" focus-row-control="" focus-type="url" href="https://www.linkedin.com/ambry/?x-li-ambry-ep=AQHJJax4vvT9bQAAAXdPzpWNQwNIAmLzE1tyJfgsL0KIwprzv1W038Ks6Jg3qm-czysBJQi-22ORNL9wld5YmstDKjTol6RbtVjyRTYOHPzo_WprG43fOKyJl7RDkFKdDmQ0Rd5M34bWyK_uEAxiHJOnM-rYW21Hm9MF8xyAF7Wa0S-_UX1nitUCpNkctVgPWpMZrHTrmM5n3gV32JkUcmMn5PM7_LDZ9mUytbj4w2rObHdDMYB9jz2M7-Wty8hH5jGFlNjyMDjgwe3s_ZsPVUR5Z9nqCm9_ycxxai5MVXWwNNvmptlVHKrq-3arzDeuDK81QdWShwceFxXX4WlIuHIDjgE3kk46b88r8VkZaQ7P7R16CKVTErXfdfKqX6lgZ7DtRLTt0NgSnIZMa6xeVoi1r_xSSGw5jLvNg9633enBfmjiJXy0aWrWmE1GLfdrXi3KbwngA8gc760y3e5mEyOyrt6X6ztLkJ5_4dBwhgb6l5cghb8Q-HFaFnGTdY2GXSWBw1JBCZXV6DgvQWof8w&amp;x-ambry-um-filename=Profile.pdf" tabindex="0">Download CV</a>
-
-                </div>
-            </div>
-        </div>
-    </section>
+        {% include 'about.html' %}
     <!-- about section end -->
 
     <!-- services section start -->
-    <section class="services" id="services">
-        <div class="max-width">
-            <h2 class="title">My Services</h2>
-            <div class="serv-content">
-                <div class="card">
-                    <div class="box">
-                        <i class="far fa-edit"></i>
-                        <div class="text">Design</div>
-                        <p>Working with Figma and Corel Draw, the CorelDraw is nothing more than a graphic design program that was developed by the Canadian Corel Corporation</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="box">
-                        <i class="fas fa-chart-line"></i>
-                        <div class="text">Experience</div>
-                        <p>I have experience in website development and development of automation bots in python with artificial intelligence for several clients.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="box">
-                        <i class="fas fa-code"></i>
-                        <div class="text">Studying</div>
-                        <p>
-                            Back-end: Java, Python and JS.<br />
-                            Front-end: Angular, JS and React.
-                            Databases: PostgreSQL, MySQL, SQLite.
-                            Tests: Selenium, Cypress<br/>
-                            IA: Scikit-learn, Pandas
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        {% include 'services.html' %}
     <!-- services section end -->
 
     <!-- skills section start -->
-    <section class="skills" id="skills">
-        <div class="max-width">
-            <h2 class="title">My skills</h2>
-            <div class="skills-content">
-                <div class="column left">
-                    <div class="text">Skills & Experiences</div>
-                    <p>My favorite languages are Java, JS and Python.</p>
-                    <a href="https://github.com/matheusosp/" target="_blank">Read more</a>
-                </div>
-                <div class="column right">
-                    <div class="info">
-                        <dl>
-                            <dt><strong>Languages I have had any experience:</strong></dt>
-                            <dd>Python</dd>
-                            <dd>PHP</dd>
-                            <dd>JAVA</dd>
-                            <dt>JavaScript, TypeScript, NodeJS</dt>
-                            <dd>Delphi</dd>
-                            <dd>C++</dd>
-                            <dd>Pascal</dd>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                        </dl>
-                        <dl>
-                            <dt><strong>FRAMEWORKS:</strong></dt>
-                            <dd>Django</dd>
-                            <dd>Django REST</dd>
-                            <dd>Selenium</dd>
-                            <dd>Pandas</dd>
-                            <dt>PySimpleGUI</dt>
-                            <dd>scikit-learn</dd>
-                            <dd>Ecosystem Spring</dd>
-                            <dd>Bootstrap</dd>
-                            <dd>React</dd>
-                            <dd>Angular</dd>
-                            <dd>Express</dd>
-                        </dl>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
+        {% include 'skills.html' %}
     <!-- skills section end -->
 
     <!-- projects section start -->
-    <section class="projects" id="projects" name="projects1">
-        <div class="max-width">
-            <h2 class="title">My Projects</h2>
-            <div class="carousel owl-carousel">
-                {% for p in projects %}
-                    <div class="card">
-                        <div class="box">
-                            <img src="{{ p.img.url }}" alt="{{ p.title }}">
-                            <div class="text">{{ p.title }}</div>
-                            <p>{{ p.resume }}</p>
-                            <a href="{% url 'project' p.pk %}">Read more</a>
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
-            <button href="" id="showProjects">Show all</button>
+        <section class="projects" id="projects" name="projectsMin" >
+            {% include 'projects.min.html' %}
+        </section>
+        <div name="projectsAll">
+            {% include 'projectsAll.html' %}
         </div>
-    </section>
-  <!--  projects section end -->
-
-    <section class="sec2 word" id="projects" name="secProjects">
-        <div class="content2">
-            <div class="mxw800p">
-                <h2 class="title" style="color: #fff;">Recent Work</h2>
-            </div>
-            <div class="workBx">
-                {% for p in projects %}
-                    <a href="{% url 'project' p.pk %}">
-                        <div class="brand" style="background-image:url({{ p.img.url }});background-repeat: no-repeat;background-size: cover;background-position: center;">
-                            <h2 >{{ p.title }}</h2>
-                        </div>
-                    </a>
-                {% endfor %}
-            </div>
-        <button href="" id="back">Back</button>
-        </div>
-    </section>
+    <!--  projects section end -->
 
     <!-- contact section start -->
-    <section class="sec contact" id="contact">
-        <div class="content2">
-            <div class="mxw800p">
-                <h3> Send a message </h3>
-                <p>Hi, contact me to chat!</p>
-            </div>
-            <div class="contactForm">
-                 <form id="contactForm" method="POST" onsubmit="myFunction()" action="{% url 'index' %}">
-                     {% csrf_token %}
-                    <div class="row100">
-                        <div class="inputBx50">
-                            <input type="text" id="name" name="name" placeholder="Name" required data-error="Please enter your name">
-                        </div>
-                        <div class="inputBx50">
-                            <input type="email" id="email" name="email" placeholder="Email Adress" required data-error="Please enter your email">
-                        </div>
-                    </div>
-                    <div class="row100">
-                        <div class="inputBx100">
-                            <input type="text" placeholder="Subject" id="msg_subject" name="subject" required data-error="Please enter your subject">
-                        </div>
-                    </div>
-                     <div class="row100">
-                        <div class="inputBx100">
-                            <textarea id="message" name="message" placeholder="Your Message" rows="7" data-error="Write your message" required></textarea>
-                        </div>
-                    </div>
-                    <div class="row100">
-                        <div class="inputBx100">
-                            <input type="submit" onclick="myFunction()" id="form-submit" value="send">
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="sci2">
-                <ul>
-                <li><a href="https://github.com/matheusosp/" target="_blank"><img src="{% static 'assets/GitHub-Mark-120px-plus.png' %}"></a></li>
-                <li><a href="https://www.linkedin.com/in/matheus-pereira-2419a3140/" target="_blank"><img src="{% static 'assets/linkedin.png' %}"></a></li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <script>
-       function sleep(ms) {
-          return new Promise(resolve => setTimeout(resolve, ms));
-       }
-       {% if messages %}
-           {% for m in messages %}
-                setTimeout(function myFunction(){
-                   Swal.fire({
-                       title: '{{ m }}',
-                       width: 600,
-                       padding: '3em',
-                       background: '#fff url(https://sweetalert2.github.io/images/trees.png)',
-                       backdrop: `
-                        rgba(0,0,123,0.4)
-                        url("https://sweetalert2.github.io/images/nyan-cat.gif")
-                        left top
-                        no-repeat
-                      `
-                   });
-               }, 1500);
-           {% endfor %}
-       {% endif %}
-    </script>
+        {% include 'contact.html' %}
+        <script>
+           function sleep(ms) {
+              return new Promise(resolve => setTimeout(resolve, ms));
+           }
+           {% if messages %}
+               {% for m in messages %}
+                    setTimeout(function myFunction(){
+                       Swal.fire({
+                           title: '{{ m }}',
+                           width: 600,
+                           padding: '3em',
+                           background: '#fff url(https://sweetalert2.github.io/images/trees.png)',
+                           backdrop: `
+                            rgba(0,0,123,0.4)
+                            url("https://sweetalert2.github.io/images/nyan-cat.gif")
+                            left top
+                            no-repeat
+                          `
+                       });
+                   }, 1500);
+               {% endfor %}
+           {% endif %}
+        </script>
     <!-- contact section end -->
 
     <!-- footer section start -->
@@ -266,18 +93,19 @@
     <script>
         var button = document.getElementById('showProjects');
         button.onclick = function() {
-            var sec1= document.getElementsByName('projects1')[0]
-            var sec = document.getElementsByName('secProjects')[0]
-            sec.style.display = 'flex';
-            sec1.style.display = 'none';
+            var secMin= document.getElementsByName('projectsMin')[0]
+            var secAll = document.getElementsByName('secProjects')[0]
+            secMin.style.display = 'none';
+            secAll.style.display = 'flex';
         };
         var button2 = document.getElementById('back');
         button2.onclick = function() {
-            var sec1= document.getElementsByName('projects1')[0]
-            var sec = document.getElementsByName('secProjects')[0]
-            sec.style.display = 'none';
-            sec1.style.display = 'flex';
+            var secMin= document.getElementsByName('projectsMin')[0]
+            var secAll = document.getElementsByName('secProjects')[0]
+            secMin.style.display = 'flex';
+            secAll.style.display = 'none';
         };
     </script>
+    <script src="{% static 'js/scriptProject.js'%}"></script>
 </body>
 </html>

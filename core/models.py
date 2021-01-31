@@ -1,12 +1,23 @@
 import uuid
 from django.db import models
 from stdimage.models import StdImageField
-from cloudinary.models import CloudinaryField
+
 
 def get_file_path(_instance, filename):
     ext = filename.split('.')[-1]
     filename = f'{uuid.uuid4()}.{ext}'
     return filename
+
+
+class Categories(models.Model):
+    name = models.CharField("name", max_length=60)
+
+    class Meta:
+        verbose_name = 'categorie'
+        verbose_name_plural = 'categories'
+
+    def __str__(self):
+        return self.name
 
 
 class Projects(models.Model):
@@ -17,6 +28,7 @@ class Projects(models.Model):
     description = models.TextField("description", blank=True)
     repository = models.BooleanField('active', default=True)
     img = StdImageField("Image", blank=True, upload_to=get_file_path, variations={'thumb': {'width': 480, 'height': 480,'crop': True}})
+    categories = models.ManyToManyField(Categories)
 
     class Meta:
         verbose_name = 'projects'
