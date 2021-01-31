@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
-
+    'cloudinary_storage',
+    'cloudinary',
 ]
 
 
@@ -123,6 +124,7 @@ MEDIA_URL = '/media/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = env('EMAIL_HOST_USER')
@@ -131,7 +133,7 @@ EMAIL_USER_TSL = True
 EMAIL_USE_SSL = True
 EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 
-
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -140,14 +142,14 @@ DATABASES = {
 }
 
 """
-    'cloudinary_storage',
-    'cloudinary',
-{% load cloudinary %}
+
 DATABASES = {
     'default': dj_database_url.config()
 }
-#CLOUDINARY_URL=cloudinary://195268148326738:F6m3rfwWZpnnu_k1tLWG5b4XBYA@hd4ijtzxv
-DEFAULT_FILE_STORAGE='cloudinary_storage.storage.MediaCloudinaryStorage'
+
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 CLOUDINARY_STORAGE = {
              'CLOUDINARY_URL': env('CLOUDINARY_URL'),
             }
@@ -161,4 +163,3 @@ CSRF_COOKIE_HTTPONLY = True
 X_FRAME_OPTIONS = "DENY"
 
 SECURE_SSL_REDIRECT = True
-"""
