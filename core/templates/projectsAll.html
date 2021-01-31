@@ -21,7 +21,7 @@
                 <div class="boxProject {{p.categories.all|join:" "|lower }}" data-category="all">
 
                     <div class="card-header">
-                        {% if p.img.url %}
+                        {% if p.img != None %}
                             <img src="{{ p.img.url }}" alt="{{ p.title }}">
                         {% else %}
                             <img src='//www.termoparts.com.br/wp-content/uploads/2017/10/no-image.jpg' alt="{{ p.title }}">
