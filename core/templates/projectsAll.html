@@ -31,7 +31,7 @@
                     <div class="card-body" >
                         <h5 class="title">{{ p.title }}</h5>
                         <p>{{ p.resume }}</p>
-                        <a href="#" class="btnn"><span>COMPRAR AGORA</span></a>
+                        <a href="{% url 'project' p.pk %}" class="btnn"><span>Read more</span></a>
                     </div>
 
                 </div>
