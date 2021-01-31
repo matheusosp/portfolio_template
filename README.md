@@ -1,4 +1,4 @@
-![Foo](https://raw.githubusercontent.com/matheusosp/SOS_Pet-Django/main/SOS%20PET.jpg)
+![Foo](https://raw.githubusercontent.com/matheusosp/portfolio_template/main/Matheus%20Oliveira%20-%20Google%20Chrome.jpg)
 
 
 ## TO RUN LOCALLY
