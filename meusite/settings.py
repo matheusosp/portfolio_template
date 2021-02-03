@@ -141,7 +141,7 @@ ANYMAIL = {
 }
 
 EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend"
-
+DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL', default='staff@' + ANYMAIL['MAILGUN_SENDER_DOMAIN'], cast=str)
 """
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
