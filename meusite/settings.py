@@ -140,9 +140,11 @@ ANYMAIL = {
     'MAILGUN_SMTP_SERVER': env('MAILGUN_SMTP_SERVER', default='', cast=str),
 }
 
-EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend"
-DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL', default='staff@' + ANYMAIL['MAILGUN_SENDER_DOMAIN'], cast=str)
-SERVER_EMAIL = env('SERVER_EMAIL', default='server@' + ANYMAIL['MAILGUN_SENDER_DOMAIN'], cast=str)
+EMAIL_HOST = env('MAILGUN_SMTP_SERVER')
+EMAIL_PORT = env('MAILGUN_SMTP_PORT')
+EMAIL_HOST_USER = env('MAILGUN_SMTP_LOGIN')
+EMAIL_HOST_PASSWORD = env('MAILGUN_SMTP_PASSWORD')
+
 """
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
