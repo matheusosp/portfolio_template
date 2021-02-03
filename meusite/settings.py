@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'core',
     'cloudinary_storage',
     'cloudinary',
-    'anymail'
+ #   'anymail'
 ]
 
 
