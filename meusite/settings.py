@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'core',
     'cloudinary_storage',
     'cloudinary',
- #   'anymail'
+    'anymail'
 ]
 
 
@@ -130,20 +130,26 @@ DEFAULT_FILE_STORAGE='cloudinary_storage.storage.MediaCloudinaryStorage'
 CLOUDINARY_STORAGE = {
              'CLOUDINARY_URL': env('CLOUDINARY_URL'),
             }
-"""
+
 ANYMAIL = {
-    # (exact settings here depend on your ESP...)
-    "MAILGUN_API_KEY": "<your Mailgun key>",
-    "MAILGUN_SENDER_DOMAIN": 'mg.example.com',  # your Mailgun domain, if needed
+    'MAILGUN_API_KEY': env('MAILGUN_API_KEY', default='', cast=str),
+    "MAILGUN_SENDER_DOMAIN": env('MAILGUN_DOMAIN', default='', cast=str),
+    'MAILGUN_SMTP_LOGIN': env('MAILGUN_SMTP_LOGIN', default='', cast=str),
+    'MAILGUN_SMTP_PASSWORD': env('MAILGUN_SMTP_PASSWORD', default='', cast=str),
+    'MAILGUN_SMTP_PORT': env('MAILGUN_SMTP_PORT', default='', cast=str),
+    'MAILGUN_SMTP_SERVER': env('MAILGUN_SMTP_SERVER', default='', cast=str),
 }
-"""
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend"
+
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.mailgun.org'
 EMAIL_HOST_USER = env('EMAIL_HOST_USER')
-EMAIL_PORT = 465
+EMAIL_PORT = 587
 EMAIL_USER_TSL = True
 EMAIL_USE_SSL = True
 EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+
 
 """
 DATABASES = {
