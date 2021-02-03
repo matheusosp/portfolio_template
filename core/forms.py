@@ -19,7 +19,6 @@ class ContactForm(forms.Form):
         mail = EmailMessage(
             subject=subject,
             body=content,
-            from_email='bremensuporte1@gmail.com',
             to=['bremensuporte1@gmail.com', ],
             headers={'Reply-To': email}
         )
